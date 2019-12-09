@@ -41,7 +41,7 @@ machine = TocMachine(
             "dest": "ask",
             "conditions": "is_going_to_ask",
         },
-        {"trigger": "go_back", "source": ["state1", "ask", "fsm"], "dest": "user"},
+        {"trigger": "go_back", "source": ["state1","ask","fsm"], "dest": "user" },
     ],
     initial="user",
     auto_transitions=False,
