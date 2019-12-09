@@ -2,6 +2,7 @@ from transitions.extensions import GraphMachine
 
 from utils import send_text_message
 from utils import send_image
+import random
 
 
 class TocMachine(GraphMachine):
@@ -10,11 +11,11 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state1(self, event):
         text = event.message.text
-        return text.lower() == "go to state1"
+        return text == "少男"
 
     def is_going_to_state2(self, event):
         text = event.message.text
-        return text.lower() == "go to state2"
+        return text.lower() == "少女"
     def is_going_to_fsm(self, event):
         text = event.message.text
         return text.lower() == "fsm"
@@ -23,7 +24,16 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_image(reply_token, "https://i.imgur.com/Crfclsh.jpg")
+	temp = random.randint(1, 5)
+	
+	if(temp==1):
+	        send_image(reply_token, "https://i.imgur.com/Crfclsh.jpg")
+	elif(temp==2):
+	        send_image(reply_token, "https://i.imgur.com/RPNUZHq.jpg")
+	elif(temp==3):
+	        send_image(reply_token, "https://i.imgur.com/xdxCt6b.jpg")
+	else:
+	        send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
         self.go_back()
 
     def on_exit_state1(self):
