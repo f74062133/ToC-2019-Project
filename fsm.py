@@ -40,6 +40,7 @@ class TocMachine(GraphMachine):
         else:
             send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
         self.go_back()
+        #i hate you
 
     def on_exit_state1(self):
         print("Leaving state1")
