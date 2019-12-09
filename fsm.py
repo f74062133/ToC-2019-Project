@@ -18,7 +18,7 @@ class TocMachine(GraphMachine):
         return text.lower() == "少女"
     def is_going_to_fsm(self, event):
         text = event.message.text
-        return text.lower() == "fsm"
+        return (text.lower() == "buttons template" or  text == "按鈕模板")
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
@@ -60,7 +60,8 @@ class TocMachine(GraphMachine):
         print("I'm entering fsm")
 
         reply_token = event.reply_token
-        send_image(reply_token, "https://i.imgur.com/7vliJBA.png")
+        button(reply_token)
+        #send_image(reply_token, "https://i.imgur.com/7vliJBA.png")
         self.go_back()
 
     def on_exit_fsm(self):
