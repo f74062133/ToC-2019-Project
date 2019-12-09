@@ -22,8 +22,10 @@ class TocMachine(GraphMachine):
         return text.lower() == "fsm"
 
     def is_going_to_ask(self, event):
-        text = event.message.text
-        return text.lower() == "睡覺睡到自然醒" or text.lower() == "成為荒野女神" or text.lower() == "以上皆是"
+        if event.get("message"):
+            text = event.message.text
+            return text.lower() == "睡覺睡到自然醒" or text.lower() == "成為荒野女神" or text.lower() == "以上皆是"
+        return False
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
