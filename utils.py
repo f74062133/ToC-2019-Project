@@ -15,8 +15,8 @@ def send_text_message(reply_token, text):
 def send_image(reply_token, text):
     line_bot_api = LineBotApi(channel_access_token)
     line_bot_api.reply_message(reply_token,ImageSendMessage(
-		original_content_url = "./Professors/5.jpg",
-		preview_image_url= "./Professors/5.jpg"
+		original_content_url = "https://ibb.co/x1mXyP8",
+		preview_image_url= "https://ibb.co/x1mXyP8"
 	    )
 	)
 
