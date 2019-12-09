@@ -112,6 +112,7 @@ def webhook_handler():
         response = machine.advance(event)
         if response == False:
             #send_text_message(event.reply_token, "Not Entering any State")
+            reply_token = event.reply_token
             button(reply_token)
 
     return "OK"
