@@ -36,7 +36,7 @@ machine = TocMachine(
             "conditions": "is_going_to_fsm",
         },
         {
-            "trigger": "advance",
+            "trigger": "advance2",
             "source": "state2",
             "dest": "ask",
             "conditions": "is_going_to_ask",
