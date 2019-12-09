@@ -24,16 +24,16 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-	temp = random.randint(1, 5)
-	
-	if(temp==1):
-	        send_image(reply_token, "https://i.imgur.com/Crfclsh.jpg")
-	elif(temp==2):
-	        send_image(reply_token, "https://i.imgur.com/RPNUZHq.jpg")
-	elif(temp==3):
-	        send_image(reply_token, "https://i.imgur.com/xdxCt6b.jpg")
-	else:
-	        send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
+
+        temp = random.randint(1,5)
+        if(temp==1):
+            send_image(reply_token, "https://i.imgur.com/Crfclsh.jpg")
+        elif(temp==2):
+            send_image(reply_token, "https://i.imgur.com/RPNUZHq.jpg")
+        elif(temp==3):
+            send_image(reply_token, "https://i.imgur.com/xdxCt6b.jpg")
+        else:
+            send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
         self.go_back()
 
     def on_exit_state1(self):
