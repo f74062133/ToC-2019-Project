@@ -23,7 +23,7 @@ def button(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
     line_bot_api.reply_message(reply_token,TemplateSendMessage(
                 altText = "Example buttons template", template = ButtonsTemplate(
-                            thumbnailImageUrl = "https://example.com/image.jpg", 
+                            thumbnail_image_url = "https://example.com/image.jpg", 
                             title = "Example Menu", 
                             text = "Please select", 
                             actions = [
