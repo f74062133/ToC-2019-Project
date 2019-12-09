@@ -29,7 +29,7 @@ class TocMachine(GraphMachine):
         return False
         #text = event.message.text
         
-        #return text.lower() == "睡覺睡到自然醒" or text.lower() == "成為荒野女神" or text.lower() == "以上皆是"
+        ##return text.lower() == "睡覺睡到自然醒" or text.lower() == "成為荒野女神" or text.lower() == "以上皆是"
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
