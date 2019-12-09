@@ -73,8 +73,8 @@ class TocMachine(GraphMachine):
         print("I'm entering ask")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "ok")
+        temp="我是高鐵服務機器人！\n"+"我可以查詢高鐵時刻表~\n"+"請輸入 : 查詢"
+        send_text_message(reply_token, temp)
         self.go_back()
-
     def on_exit_ask(self):
         print("Leaving ask")
