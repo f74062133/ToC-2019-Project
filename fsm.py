@@ -19,7 +19,7 @@ class TocMachine(GraphMachine):
         return text.lower() == "認識美眉"
     def is_going_to_fsm(self, event):
         text = event.message.text
-        return (text.lower() == "buttons template" or  text == "按鈕模板")
+        return text.lower() == "fsm"
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
