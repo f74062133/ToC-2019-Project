@@ -55,6 +55,7 @@ class TocMachine(GraphMachine):
             send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
         else:
             send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
+        self.go_ask()
 
     def on_exit_state2(self):
         print("Leaving state2")
