@@ -12,11 +12,11 @@ def send_text_message(reply_token, text):
     line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
 
     return "OK"
-def send_image(reply_token):
+def send_image(reply_token, text):
     line_bot_api = LineBotApi(channel_access_token)
     line_bot_api.reply_message(reply_token,ImageSendMessage(
-		original_content_url = "https://i.imgur.com/a4qtx1t.png",
-		preview_image_url= "https://i.imgur.com/a4qtx1t.png"
+		original_content_url = text,
+		preview_image_url = text
 	    )
 	)
 

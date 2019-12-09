@@ -15,12 +15,15 @@ class TocMachine(GraphMachine):
     def is_going_to_state2(self, event):
         text = event.message.text
         return text.lower() == "go to state2"
+    def is_going_to_fsm(self, event):
+        text = event.message.text
+        return text.lower() == "fsm"
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_image(reply_token)
+        send_image(reply_token, "https://i.imgur.com/Crfclsh.jpg")
         self.go_back()
 
     def on_exit_state1(self):
@@ -35,3 +38,13 @@ class TocMachine(GraphMachine):
 
     def on_exit_state2(self):
         print("Leaving state2")
+
+    def on_enter_fsm(self, event):
+        print("I'm entering fsm")
+
+        reply_token = event.reply_token
+        send_image(reply_token, "https://i.imgur.com/7vliJBA.png")
+        self.go_back()
+
+    def on_exit_fsm(self):
+        print("Leaving fsm")
