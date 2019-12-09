@@ -43,7 +43,14 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state2")
+        temp = random.randint(1,4)
+        if(temp==1):
+            send_image(reply_token, "https://i.imgur.com/7YanpSm.jpg")
+        elif(temp==2):
+            send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
+        else
+            send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
+
         self.go_back()
 
     def on_exit_state2(self):
