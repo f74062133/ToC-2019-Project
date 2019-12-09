@@ -20,7 +20,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_image(reply_token, "https://developers.line.biz/media/messaging-api/messages/image-full-04fbba55.png")
+        send_image(reply_token)
         self.go_back()
 
     def on_exit_state1(self):
