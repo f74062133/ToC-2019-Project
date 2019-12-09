@@ -48,7 +48,7 @@ class TocMachine(GraphMachine):
             send_image(reply_token, "https://i.imgur.com/7YanpSm.jpg")
         elif(temp==2):
             send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
-        else
+        else:
             send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
 
         self.go_back()
