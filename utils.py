@@ -48,7 +48,31 @@ def button(reply_token):
             )
         )
     return "OK"
-
+def ask(reply_token):
+    line_bot_api = LineBotApi(channel_access_token)
+    line_bot_api.reply_message(reply_token,TemplateSendMessage(
+                alt_text = "Example buttons template", template = ButtonsTemplate(
+                            thumbnail_image_url = "https://example.com/image.jpg", 
+                            title = "Which one is Sunny's favorite?", 
+                            text = "Please select", 
+                            actions = [
+                                        MessageAction( 
+                                                    label = "Sleep",
+                                                    text = "Sleep"  
+                                        ),
+                                        MessageAction( 
+                                                    label = "Play",
+                                                    text = "Play"  
+                                        ),
+                                        MessageAction( 
+                                                    label = "Both of All",
+                                                    text = "Both of All"  
+                                        )
+                            ]
+                )
+            )
+        )
+    return "OK"
 """
 def send_image_url(id, img_url):
     pass
