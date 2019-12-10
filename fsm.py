@@ -52,7 +52,7 @@ class TocMachine(GraphMachine):
         else:
             send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
 
-        self.go_menu()
+        self.go_back()
 
 
     def on_exit_state2(self):
