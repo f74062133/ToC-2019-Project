@@ -16,7 +16,8 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state2(self, event):
         text = event.message.text
-        return text.lower() == "認識美眉"
+        return text == "認識美眉"
+
     def is_going_to_fsm(self, event):
         text = event.message.text
         return text.lower() == "fsm"
@@ -34,7 +35,6 @@ class TocMachine(GraphMachine):
             send_image(reply_token, "https://i.imgur.com/xdxCt6b.jpg")
         else:
             send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
-        send_text_message(reply_token, "ok")
         self.go_back()
 
     def on_exit_state1(self):
