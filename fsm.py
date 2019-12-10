@@ -46,12 +46,23 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         temp = random.randint(1,4)
         if(temp==1):
-            send_image(reply_token, "https://i.imgur.com/7YanpSm.jpg")
+            line_bot_api.reply_message(reply_token,ImageSendMessage(
+                        original_content_url = "https://i.imgur.com/7YanpSm.jpg",
+                        preview_image_url = "https://i.imgur.com/7YanpSm.jpg"
+                    )
+                )
         elif(temp==2):
-            send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
+            line_bot_api.reply_message(reply_token,ImageSendMessage(
+                        original_content_url = "https://i.imgur.com/zP0yDYr.jpg",
+                        preview_image_url = "https://i.imgur.com/zP0yDYr.jpg"
+                    )
+                )
         else:
-            send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
-        reply_token = event.reply_token
+            line_bot_api.reply_message(reply_token,ImageSendMessage(
+                        original_content_url = "https://i.imgur.com/Xhk0Ztk.jpg",
+                        preview_image_url = "https://i.imgur.com/Xhk0Ztk.jpg"
+                    )
+                )
         line_bot_api.reply_message(reply_token,TemplateSendMessage(
                     alt_text = "Example buttons template", template = ButtonsTemplate(
                                 thumbnail_image_url = "https://example.com/image.jpg", 
