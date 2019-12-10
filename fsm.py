@@ -71,7 +71,7 @@ class TocMachine(GraphMachine):
     def on_exit_fsm(self):
         print("Leaving fsm")
 
-    def on_enter_date(self, event):
+    def on_enter_menu(self, event):
         print("I'm entering date")
 
         reply_token = event.reply_token
