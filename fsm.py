@@ -3,7 +3,6 @@ from transitions.extensions import GraphMachine
 from utils import send_text_message
 from utils import send_image
 from utils import button
-from utils import ask
 import random
 
 
@@ -52,8 +51,28 @@ class TocMachine(GraphMachine):
             send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
         else:
             send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
-        reply_token = event.reply_token
-        ask(reply_token)
+        line_bot_api.reply_message(reply_token,TemplateSendMessage(
+                    alt_text = "Example buttons template", template = ButtonsTemplate(
+                                thumbnail_image_url = "https://example.com/image.jpg", 
+                                title = "Which one is Sunny's favorite?", 
+                                text = "Please select", 
+                                actions = [
+                                            MessageAction( 
+                                                        label = "Sleep",
+                                                        text = "Sleep"  
+                                            ),
+                                            MessageAction( 
+                                                        label = "Play",
+                                                        text = "Play"  
+                                            ),
+                                            MessageAction( 
+                                                        label = "Both of All",
+                                                        text = "Both of All"  
+                                            )
+                                ]
+                    )
+                )
+            )
         self.go_menu()
 
 
