@@ -85,8 +85,9 @@ class TocMachine(GraphMachine):
                     )
                 )
             )
+        return "OK"
         self.go_back()
-
+        return "OK"
 
     def on_exit_state2(self):
         print("Leaving state2")
