@@ -42,6 +42,7 @@ machine = TocMachine(
             "conditions": "is_going_to_menu",
         },
         {"trigger": "go_back", "source": ["state1","menu","fsm"], "dest": "user" },
+        {"trigger": "go_menu", "source": ["state2"], "dest": "menu" },
     ],
     initial="user",
     auto_transitions=False,
