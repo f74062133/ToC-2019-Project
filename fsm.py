@@ -21,10 +21,9 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "fsm"
 
-    def is_going_to_ask(self, event):
+    def is_going_to_menu(self, event):
         text = event.message.text
-        return text.lower()=="睡覺睡到自然醒" or text.lower() == "成為荒野女神" or text.lower() == "以上皆是"
-
+        return text.lower() == "睡覺睡到自然醒"
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
@@ -40,7 +39,6 @@ class TocMachine(GraphMachine):
         else:
             send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
         self.go_back()
-        #i hate you
 
     def on_exit_state1(self):
         print("Leaving state1")
@@ -70,12 +68,12 @@ class TocMachine(GraphMachine):
     def on_exit_fsm(self):
         print("Leaving fsm")
 
-    def on_enter_ask(self, event):
-        print("I'm entering ask")
+    def on_enter_menu(self, event):
+        print("I'm entering menu")
 
         reply_token = event.reply_token
         temp="我是高鐵服務機器人！\n"+"我可以查詢高鐵時刻表~\n"+"請輸入 : 查詢"
         send_text_message(reply_token, temp)
         self.go_back()
-    def on_exit_ask(self):
-        print("Leaving ask")
+    def on_exit_menu(self):
+        print("Leaving state1")
