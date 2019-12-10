@@ -23,10 +23,10 @@ class TocMachine(GraphMachine):
 
     def is_going_to_menu(self, event):
         text = event.message.text
-        if text.lower() == "睡覺睡到自然醒":
+        if text == "睡覺睡到自然醒":
             return True
         else:
-            return false
+            return False
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
@@ -41,6 +41,7 @@ class TocMachine(GraphMachine):
             send_image(reply_token, "https://i.imgur.com/xdxCt6b.jpg")
         else:
             send_image(reply_token, "https://i.imgur.com/TmZEeKT.jpg")
+        send_text_message(reply_token, temp)
         self.go_back()
 
     def on_exit_state1(self):
@@ -72,7 +73,7 @@ class TocMachine(GraphMachine):
         print("Leaving fsm")
 
     def on_enter_menu(self, event):
-        print("I'm entering date")
+        print("I'm entering menu")
 
         reply_token = event.reply_token
         temp = "好的，搭車日期為: "
