@@ -61,7 +61,7 @@ class TocMachine(GraphMachine):
         print("I'm entering fsm")
 
         reply_token = event.reply_token
-        send_image(reply_token, "https://i.imgur.com/7vliJBA.png")
+        send_image(reply_token, "https://i.imgur.com/1FZk9ww.png")
         self.go_back()
 
     def on_exit_fsm(self):
