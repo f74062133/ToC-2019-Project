@@ -20,9 +20,6 @@ class TocMachine(GraphMachine):
     def is_going_to_fsm(self, event):
         text = event.message.text
         return text.lower() == "fsm"
-    def is_going_to_menu(self, event):
-        text = event.message.text
-        return text.lower() == "sleep"
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
@@ -69,12 +66,4 @@ class TocMachine(GraphMachine):
 
     def on_exit_fsm(self):
         print("Leaving fsm")
-    def on_enter_menu(self, event):
-        print("I'm entering menu")
 
-        reply_token = event.reply_token
-        send_image(reply_token, "https://i.imgur.com/7vliJBA.png")
-        self.go_back()
-
-    def on_exit_menu(self):
-        print("Leaving menu")
