@@ -46,48 +46,14 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         temp = random.randint(1,4)
         if(temp==1):
-            line_bot_api.reply_message(reply_token,ImageSendMessage(
-                        original_content_url = "https://i.imgur.com/7YanpSm.jpg",
-                        preview_image_url = "https://i.imgur.com/7YanpSm.jpg"
-                    )
-                )
+            send_image(reply_token, "https://i.imgur.com/7YanpSm.jpg")
         elif(temp==2):
-            line_bot_api.reply_message(reply_token,ImageSendMessage(
-                        original_content_url = "https://i.imgur.com/zP0yDYr.jpg",
-                        preview_image_url = "https://i.imgur.com/zP0yDYr.jpg"
-                    )
-                )
+            send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
         else:
-            line_bot_api.reply_message(reply_token,ImageSendMessage(
-                        original_content_url = "https://i.imgur.com/Xhk0Ztk.jpg",
-                        preview_image_url = "https://i.imgur.com/Xhk0Ztk.jpg"
-                    )
-                )
-        line_bot_api.reply_message(reply_token,TemplateSendMessage(
-                    alt_text = "Example buttons template", template = ButtonsTemplate(
-                                thumbnail_image_url = "https://example.com/image.jpg", 
-                                title = "Which one is Sunny's favorite?", 
-                                text = "Please select", 
-                                actions = [
-                                            MessageAction( 
-                                                        label = "Sleep",
-                                                        text = "Sleep"  
-                                            ),
-                                            MessageAction( 
-                                                        label = "Play",
-                                                        text = "Play"  
-                                            ),
-                                            MessageAction( 
-                                                        label = "Both of All",
-                                                        text = "Both of All"  
-                                            )
-                                ]
-                    )
-                )
-            )
-        return "OK"
-        self.go_back()
-        return "OK"
+            send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
+
+        self.go_menu()
+
 
     def on_exit_state2(self):
         print("Leaving state2")
