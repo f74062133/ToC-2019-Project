@@ -23,7 +23,10 @@ class TocMachine(GraphMachine):
 
     def is_going_to_menu(self, event):
         text = event.message.text
-        return text.lower() == "睡覺睡到自然醒"
+        if text.lower() == "睡覺睡到自然醒":
+            return True
+        else:
+            return false
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
@@ -68,11 +71,11 @@ class TocMachine(GraphMachine):
     def on_exit_fsm(self):
         print("Leaving fsm")
 
-    def on_enter_menu(self, event):
-        print("I'm entering menu")
+    def on_enter_date(self, event):
+        print("I'm entering date")
 
         reply_token = event.reply_token
-        temp="我是高鐵服務機器人！\n"+"我可以查詢高鐵時刻表~\n"+"請輸入 : 查詢"
+        temp = "好的，搭車日期為: "
         send_text_message(reply_token, temp)
         self.go_back()
     def on_exit_menu(self):
