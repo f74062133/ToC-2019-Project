@@ -51,6 +51,7 @@ class TocMachine(GraphMachine):
             send_image(reply_token, "https://i.imgur.com/zP0yDYr.jpg")
         else:
             send_image(reply_token, "https://i.imgur.com/Xhk0Ztk.jpg")
+        reply_token = event.reply_token
         line_bot_api.reply_message(reply_token,TemplateSendMessage(
                     alt_text = "Example buttons template", template = ButtonsTemplate(
                                 thumbnail_image_url = "https://example.com/image.jpg", 
